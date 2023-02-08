@@ -13,7 +13,8 @@ class LoginView extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(ImageConstants.LoginBackgroundPng)
+            image: AssetImage(ImageConstants.LoginBackgroundPng),
+                fit: BoxFit.fill
           )
         ),
         child: Align(
