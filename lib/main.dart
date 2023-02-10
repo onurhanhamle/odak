@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:odak/view/login_screen.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:odak/core/auth_manager.dart';
+import 'package:odak/login/login_view.dart';
+import 'package:odak/splash/splash_view.dart';
+import 'package:provider/provider.dart';
+
+import 'login/login.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+      Provider<AuthenticationManager>(
+          create: (context) => AuthenticationManager(context: context),
+
+      )
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -13,10 +27,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
-
-      home: LoginView(),
+      home: SplashView(),
+      builder: EasyLoading.init(),
     );
   }
 }
-
