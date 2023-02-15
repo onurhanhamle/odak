@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:odak/constant/color_constants.dart';
-import 'package:odak/home/home.dart';
+import 'package:odak/profile/profile.dart';
 import 'package:odak/qrCode/qr_code.dart';
 
 class BottombarView extends StatefulWidget {
@@ -11,31 +11,37 @@ class BottombarView extends StatefulWidget {
 }
 
 class _BottombarViewState extends State<BottombarView> {
-  int currentTab = 0;
+  int currentTab = 2;
   static List<Widget> _widgetList = <Widget>[
-    Home(),
+    Text(
+      'Index 2: Profile',
+    ),
     Text(
       'Index 2: School',
     ),
     QrCode(),
     Text(
-      'Index 2: Profile',
-    ),
-    Text(
       'Index 3: Profileasfa',
     ),
+    Profile(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton.large(
-        backgroundColor: ColorConstants.appBlue,
-        child: Icon(Icons.qr_code, size: 60),
-        onPressed: () {
-          setState(() {
-            currentTab = 2;
-          });
-        },
+      floatingActionButton: Container(
+        height: 70,
+        width: 70,
+        child: FittedBox(
+          child: FloatingActionButton(
+            backgroundColor: ColorConstants.appBlue,
+            child: Icon(Icons.qr_code, size: 40),
+            onPressed: () {
+              setState(() {
+                currentTab = 2;
+              });
+            },
+          ),
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: ClipRRect(
@@ -67,7 +73,9 @@ class _BottombarViewState extends State<BottombarView> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Icon(
-                              Icons.home,color: Colors.white,size: 35,
+                              Icons.home_outlined,
+                              color: Colors.white,
+                              size: 35,
                             ),
                           ],
                         ),
@@ -91,7 +99,9 @@ class _BottombarViewState extends State<BottombarView> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Icon(
-                              Icons.home,color: Colors.white,size: 35,
+                              Icons.airplane_ticket_outlined,
+                              color: Colors.white,
+                              size: 35,
                             ),
                           ],
                         ),
@@ -117,7 +127,9 @@ class _BottombarViewState extends State<BottombarView> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Icon(
-                              Icons.home,color: Colors.white,size: 35,
+                              Icons.add_alert_outlined,
+                              color: Colors.white,
+                              size: 35,
                             ),
                           ],
                         ),
@@ -141,7 +153,9 @@ class _BottombarViewState extends State<BottombarView> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Icon(
-                              Icons.home,color: Colors.white,size: 35,
+                              Icons.person_outline,
+                              color: Colors.white,
+                              size: 35,
                             ),
                           ],
                         ),
