@@ -5,4 +5,6 @@ mixin ProfileResources{
   String alertDialogApprove="Çıkış";
   String alertDialogCancel="İptal";
   String alertDialogBody="Çıkış yapmak istiyor musunuz?";
+  String userName="Mustafa KOÇAK";
+  String userTag="Görsel İletişim Uzmanı";
 }
