@@ -12,7 +12,6 @@ class SurveyView extends SurveyViewModel {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
       body: buildColumn(context),
     );
   }
@@ -60,59 +59,7 @@ class SurveyView extends SurveyViewModel {
             ]));
   }
 
-  AppBar buildAppBar() {
-    return AppBar(
 
-      leading: Container(
-        margin: EdgeInsets.only(left: 10, top: 5, bottom: 5),
-        width: 60,
-        decoration: BoxDecoration(
-            color: ColorConstants.appWhite,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.black,
-              )
-            ]),
-        child: IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.density_medium_rounded,
-            color: ColorConstants.appBlue,
-          ),
-        ),
-      ),
-      actions: [
-        Container(
-          margin: EdgeInsets.only(right: 10, top: 5, bottom: 5),
-          width: 50,
-          decoration: BoxDecoration(
-              color: ColorConstants.appWhite,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black,
-                )
-              ]),
-          child: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.add_alert_outlined,
-              color: ColorConstants.appBlue,
-            ),
-          ),
-        )
-      ],
-      automaticallyImplyLeading: false,
-      backgroundColor: Colors.transparent,
-      centerTitle: true,
-      elevation: 0,
-      title: Text(
-        "Anketler",
-        style: GoogleFonts.inter(fontSize: 15, color: ColorConstants.appBlue),
-      ),
-    );
-  }
 
   Container devamEdenTabBar(BuildContext context) {
     return Container(

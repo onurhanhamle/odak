@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_calendar/flutter_advanced_calendar.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:odak/announcement/announcement.dart';
 import 'package:odak/constant/color_constants.dart';
@@ -44,56 +45,6 @@ class MainView extends MainViewModel {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Container(
-          margin: EdgeInsets.only(left: 10, top: 5, bottom: 5),
-          width: 60,
-          decoration: BoxDecoration(
-              color: ColorConstants.appWhite,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black,
-                )
-              ]),
-          child: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.density_medium_rounded,
-              color: ColorConstants.appBlue,
-            ),
-          ),
-        ),
-        actions: [
-          Container(
-            margin: EdgeInsets.only(right: 10, top: 5, bottom: 5),
-            width: 50,
-            decoration: BoxDecoration(
-                color: ColorConstants.appWhite,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.black,
-                  )
-                ]),
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.add_alert_outlined,
-                color: ColorConstants.appBlue,
-              ),
-            ),
-          )
-        ],
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
-        elevation: 0,
-        title: Text(
-          "Anasayfa",
-          style: GoogleFonts.inter(fontSize: 15, color: ColorConstants.appBlue),
-        ),
-      ),
       body: Padding(
         padding: EdgeInsets.only(
             left: context.dynamicWidth(0.05),
@@ -162,12 +113,13 @@ class MainView extends MainViewModel {
                 Text("Duyurular"),
                 InkWell(
                   onTap: () {
-                    Navigator.push(context,
+                    Navigator.push(
+                        context,
                         MaterialPageRoute(
-                          maintainState: false,
+                            maintainState: false,
                             builder: (context) {
-                      return Announcement();
-                    }));
+                              return Announcement();
+                            }));
                   },
                   child: Container(
                     alignment: Alignment.center,
